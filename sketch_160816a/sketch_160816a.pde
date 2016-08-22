@@ -19,29 +19,35 @@ void draw()
   dude.Render(red, green, blue);
   rgb = "(" + red + ", " + green + ", " + blue + ")";
   if (keyPressed) {
-    if ( red > 0 && ( key == 's' || key == 'S' ))
+    if ( red > 0 && ( key == 'a' || key == 'A' ))
     {
       red--;
     }
-    else if ( red < 255 && (key == 'w' || key == 'W'))
+    else if ( red < 255 && (key == 'q' || key == 'Q'))
     {
       red++;
     }
-    else if ( green < 255 && (key == 'e' || key == 'E'))
+    else if ( green < 255 && (key == 'w' || key == 'W'))
     {
       green++;
     }
-    else if ( green > 0 && ( key == 'd' || key == 'D' ))
+    else if ( green > 0 && ( key == 's' || key == 'S' ))
     {
       green--;
     }
-    else if ( blue < 255 && ( key == 'r' || key == 'R' ))
+    else if ( blue < 255 && ( key == 'e' || key == 'E' ))
     {
       blue++;
     }
-    else if ( blue > 0 && ( key == 'f' || key == 'F' ))
+    else if ( blue > 0 && ( key == 'd' || key == 'D' ))
     {
       blue--;
+    }
+    else if (key == 'r' || key == 'R')
+    {
+      green = 255;
+      blue = 255;
+      red = 255;
     }
     else
     {
