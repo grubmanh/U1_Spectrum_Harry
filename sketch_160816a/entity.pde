@@ -15,5 +15,10 @@ class entity
     rect((width*2)/3, 0, width/3, height);
     fill(r, g, b);
     rect((width/6), (height/4), 4*(width/6), 2*(height/4));
+    fill(0, 0, 0);
+    textSize(50);
+    textAlign(CENTER);
+    text(rgb, width/2, height/2);
+
   }
 }
