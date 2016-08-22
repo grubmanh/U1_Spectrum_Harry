@@ -16,24 +16,51 @@ public class sketch_160816a extends PApplet {
 
 entity dude;
 
+int red = 255;
+int green = 255;
+int blue = 255;
+
 public void setup()
 {
   
   dude = new entity();
+  background(0xffFFFFFF);
+  dude.Render(255, 255, 255);
 }
 
 public void draw()
 {
+  background(0xffFFFFFF);
+  dude.Render(red, green, blue);
   if (keyPressed) {
-    if (key == 'b' || key == 'B')
+    if (key == 's' || key == 'S')
     {
-      background(0xffFFFFFF);
-      dude.Render(255, 255, 255);
+      red--;
+    }
+    else if (key == 'w' || key == 'W')
+    {
+      red++;
+    }
+    else if (key == 'e' || key == 'E')
+    {
+      green++;
+    }
+    else if (key == 'd' || key == 'D')
+    {
+      green--;
+    }
+    else if (key == 'r' || key == 'R')
+    {
+      blue++;
+    }
+    else if (key == 'f' || key == 'F')
+    {
+      blue--;
     }
     else
     {
       background(0xffFFFFFF);
-      dude.Render(0, 0, 0);
+      dude.Render(red, green, blue);
     }
   }
 
