@@ -4,27 +4,41 @@
 */
 class entity
 {
-  void Render(int r, int g, int b)
+  void Render(int red, int green, int blue)
   {
-    fill(r, 0, 0);
+    fill(red, 0, 0);
     rect(0, 0, width/3, height);
-    fill(0, g, 0);
+    fill(0, green, 0);
     rect(width/3, 0, width/3, height);
-    fill(0, 0, b);
+    fill(0, 0, blue);
     rect((width*2)/3, 0, width/3, height);
-    fill(r, g, b);
+    fill(red, green, blue);
     rect((width/6), 0, 4*(width/6), (height/2));
-    fill(0, 0, 0);
+    if ( red < 122 && blue < 122 && green < 122)
+    {
+      fill(#ffffff);
+    }
+    else
+    {
+      fill(#000000);
+    }
     textSize(50);
     textAlign(CENTER);
     text(rgb, width/2, height/4);
   }
-  void Saved(int r, int g, int b, int n)
+  void Saved(int red, int green, int blue, int n)
   {
-    fill(r, g, b);
-    String rgb = "(" + r + ", " + g + ", " + b + ")";
+    String rgb = "(" + red + ", " + green + ", " + blue + ")";
+    fill(red, green, blue);
     ellipse((n*(width/3)-(width/6)), 5*(height/7), (width)/6, (width)/6);
-    fill(#000000);
+    if ( red < 122 && blue < 122 && green < 122)
+    {
+      fill(#ffffff);
+    }
+    else
+    {
+      fill(#000000);
+    }
     textSize(width/50);
     text(rgb, (n*(width/3)-(width/6)), 5*(height/7));
   }

@@ -2,8 +2,7 @@
   Spectrum by Harry Grubman
   A keyboard-controlled color selector which allows users to select and save colors.
 */
-entity dude;
-
+entity spectrumize;
 int red = 255;
 int green = 255;
 int blue = 255;
@@ -11,34 +10,31 @@ String rgb = "";
 String rgb1 = "";
 String rgb2 = "";
 String rgb3 = "";
-int r1, g1, b1, r2, g2, b2, r3, g3, b3;
+int red1, green1, blue1, red2, green2, blue2, red3, green3, blue3;
 int n = 1;
 
 void setup()
 {
   fullScreen();
-  dude = new entity();
-  background(#FFFFFF);
-  rgb = "(" + red + ", " + green + ", " + blue + ")";
-  dude.Render(255, 255, 255);
+  spectrumize = new entity();
 }
 
 void draw()
 {
   background(#FFFFFF);
-  dude.Render(red, green, blue);
+  spectrumize.Render(red, green, blue);
   rgb = "(" + red + ", " + green + ", " + blue + ")";
   if ( n > 1 )
   {
-    dude.Saved(r1, g1, b1, 1);
+    spectrumize.Saved(red1, green1, blue1, 1);
   }
   if ( n > 2 )
   {
-    dude.Saved(r2, g2, b2, 2);
+    spectrumize.Saved(red2, green2, blue2, 2);
   }
   if ( n > 3 )
   {
-    dude.Saved(r2, g2, b2, 3);
+    spectrumize.Saved(red3, green3, blue3, 3);
   }
   if (keyPressed)
     {
@@ -78,25 +74,25 @@ void draw()
         switch(n)
         {
           case 1:
-          r1 = red;
-          b1 = blue;
-          g1 = green;
-          rgb1 = "(" + r1 + ", " + g1 + ", " + b1 + ")";
+          red1 = red;
+          blue1 = blue;
+          green1 = green;
+          rgb1 = "(" + red1 + ", " + green1 + ", " + blue1 + ")";
           break;
           case 2:
-          r2 = red;
-          b2 = blue;
-          g2 = green;
-          rgb2 = "(" + r2 + ", " + g2 + ", " + b2 + ")";
+          red2 = red;
+          blue2 = blue;
+          green2 = green;
+          rgb2 = "(" + red2 + ", " + green2 + ", " + blue2 + ")";
           break;
           case 3:
-          r3 = red;
-          b3 = blue;
-          g3 = green;
-          rgb3 = "(" + r3 + ", " + g3 + ", " + b3 + ")";
+          red3 = red;
+          blue3 = blue;
+          green3 = green;
+          rgb3 = "(" + red3 + ", " + green3 + ", " + blue3 + ")";
           break;
         }
-        delay(1000);
+        delay(300);
         n++;
       }
       else if ((key == 'f' || key == 'F') && n == 4)
