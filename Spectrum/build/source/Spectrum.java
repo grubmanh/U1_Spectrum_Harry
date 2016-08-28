@@ -19,6 +19,7 @@ public class Spectrum extends PApplet {
   A keyboard-controlled color selector which allows users to select and save colors.
 */
 entity spectrumize;
+PrintWriter output;
 int red = 255;
 int green = 255;
 int blue = 255;
@@ -33,6 +34,11 @@ public void setup()
 {
   
   spectrumize = new entity();
+  output = createWriter("saved_colors.txt");
+  output.println("This tool will only save the colors from the most recent session (max 3).");
+  output.println("If you would like to save more than that, please copy the RGB values and paste them somewhere else.");
+  output.println("");
+  output.flush();
 }
 
 public void draw()
@@ -94,21 +100,27 @@ public void draw()
           blue1 = blue;
           green1 = green;
           rgb1 = "(" + red1 + ", " + green1 + ", " + blue1 + ")";
+          output.println(rgb1);
+          output.flush();
           break;
           case 2:
           red2 = red;
           blue2 = blue;
           green2 = green;
           rgb2 = "(" + red2 + ", " + green2 + ", " + blue2 + ")";
+          output.println(rgb2);
+          output.flush();
           break;
           case 3:
           red3 = red;
           blue3 = blue;
           green3 = green;
           rgb3 = "(" + red3 + ", " + green3 + ", " + blue3 + ")";
+          output.println(rgb3);
+          output.flush();
           break;
         }
-        delay(300);
+        delay(200);
         n++;
       }
       else if ((key == 'f' || key == 'F') && n == 4)
@@ -117,6 +129,13 @@ public void draw()
         rect(width/4, height/4, width/2, height/2);
         fill(0xff000000);
         text("No Save Space", width/2, height/2);
+      }
+      else if (key == 'x' || key == 'X')
+      {
+        output.println("");
+        output.println("Created with Spectrum by Harry Grubman");
+        output.flush();
+        exit();
       }
     }
 }
@@ -136,8 +155,6 @@ class entity
     rect((width*2)/3, 0, width/3, height);
     fill(red, green, blue);
     rect((width/6), 0, 4*(width/6), (height/2));
-    // fill(#ffffff);
-    // rect(width/2, height/4, width/6, height/6);
     if ( red < 122 && blue < 122 && green < 122)
     {
       fill(0xffffffff);
