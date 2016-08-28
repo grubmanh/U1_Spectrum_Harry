@@ -19,6 +19,8 @@ void setup()
   fullScreen();
   spectrumize = new entity();
   output = createWriter("saved_colors.txt");
+  output.println("Created with Spectrum by Harry Grubman");
+  output.println("");
   output.println("This tool will only save the colors from the most recent session (max 3).");
   output.println("If you would like to save more than that, please copy the RGB values and paste them somewhere else.");
   output.println("");
@@ -116,9 +118,6 @@ void draw()
       }
       else if (key == 'x' || key == 'X')
       {
-        output.println("");
-        output.println("Created with Spectrum by Harry Grubman");
-        output.flush();
         exit();
       }
     }

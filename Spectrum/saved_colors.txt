@@ -1,0 +1,8 @@
+Created with Spectrum by Harry Grubman
+
+This tool will only save the colors from the most recent session (max 3).
+If you would like to save more than that, please copy the RGB values and paste them somewhere else.
+
+(255, 255, 255)
+(255, 191, 255)
+(255, 191, 131)

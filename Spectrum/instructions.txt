@@ -1,0 +1,22 @@
+Spectrum by Harry Grubman
+
+Use:
+
+Spectrum is used to select RGB (Red, Green, Blue) values of colors that can be
+used in other programs. You can increase and decrease values of separate colors
+between the minimum and the maximum (0 and 255 respectively). These colors can
+be saved in patches at the bottom, which will be saved in a file in the content
+folder, "saved_colors.txt". You can save a maximum of three colors at a time,
+but the patches can be reset.
+
+Instructions:
+
+Q - Red +
+A - Red -
+W - Green +
+S - Green -
+E - Blue +
+D - Blue -
+F - Save Current Color
+R - Reset
+X - Exit and Save
